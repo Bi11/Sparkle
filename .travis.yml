@@ -1,7 +1,12 @@
 language: objective-c
-osx_image: 
-  - xcode8.2
-  - xcode8
+osx_image: xcode8.2
 before_install:
   - brew update
 script: make ci
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode8.2
+    - os: osx
+      osx_image: xcode8
+
